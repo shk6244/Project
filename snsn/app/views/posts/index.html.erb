@@ -1,0 +1,28 @@
+<div class="container"> 
+	<div class="row"> 
+		<div class="col s12 m4">
+			<div class="card"> 
+				<% if user_signed_in? %>
+					<div class="card-image">
+						<img src="https://i.ibb.co/r52PpqL/1-03-Authority-Logo.jpg" />
+					</div> <div class="card-content">
+					<div class="card-title"><%= current_user.name %></div> 
+					<p>이메일 : <%= current_user.email %></p>
+					<p>올린 글 개수 : <%= @posts_count %></p>
+
+					<%= link_to new_post_path do %> 
+						<button class="btn">글 쓰기</button>
+					<% end %>
+					</div>
+				<% end %>
+			</div>
+		</div> 
+		
+		<div class="col s12 m8">
+			<% @posts.each do |post| %>
+				<%= render partial: "post", object: post %>
+			<% end %> 
+		</div> 
+	</div>
+</div>
+

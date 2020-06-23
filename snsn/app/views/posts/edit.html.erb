@@ -1,0 +1,16 @@
+<div class="container"> 
+	<div class="row"> 
+		<div class="card col s12"> 
+			<div class="card-content">
+				<div class="card-title">수정하기</div>
+					<%= form_tag post_path(@post), method: "patch" do %>
+				<input type="hidden" name="id" value="<%=@post.id%>">
+				<div class="input-field">
+					<%= text_area_tag :content, @post.content, class: "materialize-textarea", placeholder: "무슨 생각을 하고 있나요?" %> </div> 
+				<div class="input-field">
+					<%= button_tag "수정하기", class: "btn" %> </div> <% end %> 
+			</div> 
+		</div>
+	</div> 
+</div>
+
